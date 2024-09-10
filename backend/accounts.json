@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Nick",
+    "email": "text@text",
+    "password": "text",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmljayIsImVtYWlsIjoidGV4dEB0ZXh0IiwicGFzc3dvcmQiOiJ0ZXh0IiwiaWF0IjoxNzI1ODY2ODc1fQ.JrK-Fwj6BvgDSrgVS1n7Xpx9o6xfkNyLP66ERhVDZjU",
+    "id": 0,
+    "completedLevels": [
+      {
+        "idLevel": "1",
+        "point": 100
+      },
+      {
+        "idLevel": "2",
+        "point": 100
+      },
+      {
+        "idLevel": "4",
+        "point": 100
+      }
+    ]
+  },
+  {
+    "name": "wdwdwdw",
+    "email": "dgwgwg@dwdwwd",
+    "password": "321",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2R3ZHdkdyIsImVtYWlsIjoiZGd3Z3dnQGR3ZHd3ZCIsInBhc3N3b3JkIjoiMzIxIiwiaWF0IjoxNzI1ODgxNjA1fQ.Cw2MesML8R6ZGzCZ_C2VsSiPeP3-5J1icKEU_srmrHU",
+    "id": 1,
+    "completedLevels": [
+      {
+        "idLevel": "2",
+        "point": 100
+      },
+      {
+        "idLevel": "1",
+        "point": 100
+      }
+    ]
+  }
+]
