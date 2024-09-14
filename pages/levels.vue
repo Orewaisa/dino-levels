@@ -1,5 +1,5 @@
 <template>
-	<section class="levels-list font">
+	<section  class="levels-list font" v-if="store.checkAccount">
 		<div class="level" v-for="level in arrayLevels" :key="level.id" @click="navigationPageLevels(level, level.id)" :style="{'background': checkComplexityLevel(level.id) ? 'green' : null}">
 			<p class="id-level">Уровень: {{ level.id }}</p>
 			<div class="type">
@@ -15,6 +15,9 @@
 			</div>
 		</div>
 	</section>
+	<section v-else class="error-section font">
+		<h2>У вас похоже нет аккаунта, <NuxtLink to="/registration">зарегестрируйтесь</NuxtLink></h2>
+	</section>
 </template>
 
 <style lang="less" scoped>
@@ -26,7 +29,7 @@
 	grid-auto-rows: auto;
 
 	& .level {
-		margin: 10px auto;
+		margin: 0px auto;
 		padding: 20px;
 		cursor: pointer;
 		background: #0a0768;
@@ -49,7 +52,7 @@
 		}
 
 		& .title {
-      margin: 10px 0px;
+      margin: 15px 0px;
 			text-align: center;
 			font-size: 20px;
 
@@ -66,6 +69,18 @@
 	}
 }
 
+.error-section {
+	text-align: center;
+	margin-top: 100px;
+	& > h2 {
+		color: red;
+
+		& > a {
+			color: #5c57ff;
+			text-decoration: underline;
+		}
+	}
+}
 
 .blocked-level {
   background: green;;
@@ -85,17 +100,19 @@ function navigationPageLevels(level, id) {
 	navigateTo({ path: `/level/${id}`, query: level })
 }
 function checkComplexityLevel(id) {
-	return correctUser.value.completedLevels.some(e => e.idLevel == id);
+		return correctUser.value.completedLevels.some(e => e.idLevel == id);
 }
 
 onMounted(async () => {
-    token = localStorage.getItem("token");
-    const response = await levels.getLevels({});
-    const users = await user.getUsers({});
-    correctUser.value = users.find(e => e.token === token);
-  
-    arrayLevels.value = response;
-
-  console.log(correctUser.value)
+	if(localStorage.getItem("token")) {
+		token = localStorage.getItem("token");
+		const responseLevels = await levels.getLevels({});
+		const response = await user.getCurrentUser({ params: { token } });
+		correctUser.value = response.user;
+	
+		arrayLevels.value = responseLevels;
+	
+		console.log(correctUser.value)
+	}
 })
 </script>

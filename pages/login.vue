@@ -1,11 +1,12 @@
 <template>
   <section v-if="!checkAccount" class="login font">
-    <form class="form-login" @submit.prevent="checkForm()">
+    <form class="form-login" @submit.prevent="sendUser()">
+      <p class="error-text">{{ errors }}</p>
       <div class="input-block" v-for="(field, key) in fields">
-        <label class="name">{{ field }}<span>*</span></label>
-        <input :type="key" v-model="formData[field]">
+        <label class="name">{{ field.type }}<span>*</span></label>
+        <input :type="getInputType(field.key)" v-model="formData[field.key]">
       </div>
-      <p class="no-account"><nuxt-link to="/registration">Нет аккаунта? Создай его</nuxt-link></p>
+      <p class="no-account"><nuxt-link to="/login">Есть аккаунт? Войди в него</nuxt-link></p>
       <button type="submit" class="btn-login">Войти</button>
     </form>
   </section>
@@ -57,23 +58,63 @@
       }
     }
   }
+
+  .error-text {
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
 </style>
 
 <script setup>
   import { useChecksAccount } from "../stores/checksAccount";
   import { user } from "../services/api/index";
-
-  let fields = {
-    text: 'Ник',
-    email: 'Почта',
-    password: 'Пароль'
-  }
+  
+  const store = useChecksAccount();
+  const checkAccount = computed(() => store.checkAccount);
+  let errors = ref('');
+  let fields = [
+    { id: 1, type: 'Ник', key: 'text' },
+    { id: 2, type: 'Почта', key: 'email' },
+    { id: 3, type: 'Пароль', key: 'password' },
+  ];
   let formData = reactive({
     text: '',
     email: '',
     password: ''
   });
-  
-  const store = useChecksAccount();
-  const checkAccount = computed(() => store.checkAccount);
+
+  async function sendUser() {
+    errors.value = '';
+    const response = await user.postLoginUser(formData, {});
+    console.log(response.data);
+    
+    if(response.data.ok) {
+      const token = response.data.token;
+      if(response.data.admin) {
+        store.reloadedVariableAdminToken(true);
+      }
+      store.reloadedCheckAccount(true);
+      localStorage.setItem("token", token);
+      setTimeout(() => {
+        navigateTo('/')
+      }, 1000)
+    } else {
+      errors.value = response.data.errorText;
+    }
+    console.log(errors.value)
+  }
+  function getInputType(key) {
+    switch(key) {
+      case "text" : return "text"
+        break;
+      case "email" : return "email"
+        break;
+      case "password" : return "password"
+        break;
+      case "currPassword" : return "password"
+        break;
+    };
+  }
 </script>

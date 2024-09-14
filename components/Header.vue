@@ -11,6 +11,7 @@
         <li class="page-link"><nuxt-link to="/">Главная</nuxt-link></li>
         <li class="page-link"><nuxt-link to="/levels">Уровни</nuxt-link></li>
         <li class="page-link"><nuxt-link to="/experience">Система опыта</nuxt-link></li>
+        <li class="page-link admin-panel" v-if="checkAdminAccount"><nuxt-link to="/create-levels">Создать уровень</nuxt-link></li>
         <li class="page-link">
           <nuxt-link v-if="checkAccount" to="/account">Аккаунт</nuxt-link>
           <nuxt-link v-else to="/login">Войти в аккаунт</nuxt-link>
@@ -48,24 +49,39 @@
           & > a {
           }
         }
+
+        & .admin-panel {
+          & > a {
+            color: rgb(225, 255, 0);
+
+          }
+        }
       }
     }
   }
 </style>
 
 <script setup>
+  import { user, levels } from '@/services/api/index'
   import { useChecksAccount } from "../stores/checksAccount";
-  import { user } from "../services/api/index";
 
   const store = useChecksAccount();
   const checkAccount = computed(() => store.checkAccount);
+  const checkAdminAccount = computed(() => store.checkAdminToken);
 
   onMounted(async () => {
-    const token = localStorage.getItem("token") || null;
-    const response = await user.getUsers({});
-
+    const token = localStorage.getItem("token");
     if (token) {
       store.reloadedCheckAccount(true);
+		  
+      const response = await user.getCurrentUser({ params: { token } });
+      console.log(response.user.admin);
+      
+      if(response.user.admin) {
+        store.reloadedVariableAdminToken(true);
+      };
+
     }
+    
   })
 </script>

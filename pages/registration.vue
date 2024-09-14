@@ -1,6 +1,7 @@
 <template>
   <section v-if="!checkAccount" class="login font">
-    <form class="form-login" @submit.prevent="checkForm()">
+    <form class="form-login" @submit.prevent="sendUser()">
+      <p class="error-text">{{ errors }}</p>
       <div class="input-block" v-for="(field, key) in fields">
         <label class="name">{{ field.type }}<span>*</span></label>
         <input :type="getInputType(field.key)" v-model="formData[field.key]">
@@ -18,6 +19,12 @@
     & .form-login {
       margin: 0 auto;
       
+      & .error-text {
+        font-weight: bold;
+        font-size: 30px;
+        color: red;
+      }
+
       & .input-block {
         margin-top: 30px;
 
@@ -80,34 +87,29 @@
     currPassword: '',
   });
   
-  async function checkForm() {
-    const {password, currPassword, text} = formData;
-    console.log(formData)
-    console.log(fields)
-
-    const response = await user.getUsers({});
-    const users = response || [];
-    console.log(response);
-    
-    if(users.some(item => item.password === password)) {
-      return errors.value = "такой пароль уже существует!";
-    } else if(password !== currPassword) {
-      return errors.value = "Пароли не совпадают!";
-    } else if(users.some(item => item.name === text)) {
-      return errors.value = "Такой ник уже занят!";
-    } else {
-      
-      return await sendUser();
-    }
-  };
-  
   async function sendUser() {
-    const response = await user.postUser({name: formData.text, email: formData.email, password: formData.password}, {});
-    let data = response.data.userData;
-    console.log(data);
+    const checkPassword = formData.password == formData.currPassword;
     
-    localStorage.setItem("token", data.token);
-    return store.reloadedCheckAccount(true); 
+    if(checkPassword) {
+      const responseCheckForm = await user.checkForm(formData);
+      console.log(responseCheckForm);
+
+      if(responseCheckForm.data.ok) {
+        const response = await user.postUser({name: formData.text, email: formData.email, password: formData.password}, {});
+        
+        let data = response.data.userData;
+        
+        console.log(data);
+        
+        localStorage.setItem("token", data.token);
+    
+        return store.reloadedCheckAccount(true); 
+      } else {
+        errors.value = responseCheckForm.data.textError;
+      }
+    } else {
+      errors.value = 'Пароли не совпадают!'
+    }
     
   }
 

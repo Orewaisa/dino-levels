@@ -52,7 +52,7 @@
 		"task": "",
 		"options": [
 			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": false },
+			{ "option": "John Doe", "check": true },
 			{ "option": "John + ' ' + Doe", "check": false }
 		],
 		"complexity": "Легкий"
@@ -65,7 +65,7 @@
 		"task": "",
 		"options": [
 			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": false },
+			{ "option": "John Doe", "check": true },
 			{ "option": "John + ' ' + Doe", "check": false }
 		],
 		"complexity": "Легкий"
@@ -77,7 +77,7 @@
 		"task": "",
 		"options": [
 			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": false },
+			{ "option": "John Doe", "check": true },
 			{ "option": "John + ' ' + Doe", "check": false }
 		],
 		"complexity": "Легкий"

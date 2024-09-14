@@ -6,10 +6,12 @@
     </div>
 
     <div class="title">
+      <p class="error">{{ errorText }}</p>
+      <p class="current">{{ currentText }}</p>
       <h2>{{ levelInfo.title }}</h2>
     </div>
 
-    <div class="task ">
+    <div class="task">
       <div class="texts">
         <p v-for="textTask in levelInfo.task.split('\n')">{{ textTask }}</p>
       </div>
@@ -41,6 +43,19 @@
     & .title {
       text-align: center;
       font-size: 20px;
+
+      & .error {
+        color: red;
+        font-weight: 700;
+        font-size: 50px;
+      }
+      
+      & .current {
+        color: rgb(0, 185, 0);
+        font-weight: 700;
+        font-size: 50px;
+
+      }
     }
 
     & .task {
@@ -93,12 +108,26 @@
   let levelInfo = ref(null);
   let checkCurrent = ref(null);
   let token = ref("");
+  let errorText = ref("");
+  let currentText = ref("");
 
   async function checksOption(check) {
+    errorText.value = '';
     if(check) {
       const response = await levels.postCurrentLevel({id: levelId, token: token.value, points: 100}, {}).then(res => res.data);
       checkCurrent.value = check;
       console.log(response);
+      if(response.error) {
+        errorText.value = response.error;
+      } else {
+        currentText.value = 'Верно!';
+      }
+    } else {
+      errorText.value = 'Не правильно!';
+      setTimeout(() => {
+        errorText.value = '';
+        
+      }, 3000)
     }
   }
 
