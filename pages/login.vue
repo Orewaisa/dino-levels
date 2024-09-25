@@ -6,7 +6,7 @@
         <label class="name">{{ field.type }}<span>*</span></label>
         <input :type="getInputType(field.key)" v-model="formData[field.key]">
       </div>
-      <p class="no-account"><nuxt-link to="/login">Есть аккаунт? Войди в него</nuxt-link></p>
+      <p class="no-account"><nuxt-link to="/registration">Есть аккаунт? Войди в него</nuxt-link></p>
       <button type="submit" class="btn-login">Войти</button>
     </form>
   </section>

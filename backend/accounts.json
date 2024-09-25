@@ -1,193 +1,72 @@
 [
   {
-    "name": "Nick",
-    "email": "text@text",
-    "password": "text",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTmljayIsImVtYWlsIjoidGV4dEB0ZXh0IiwicGFzc3dvcmQiOiJ0ZXh0IiwiaWF0IjoxNzI1ODY2ODc1fQ.JrK-Fwj6BvgDSrgVS1n7Xpx9o6xfkNyLP66ERhVDZjU",
-    "id": 0,
-    "completedLevels": [
-      {
-        "idLevel": "1",
-        "point": 100
-      },
-      {
-        "idLevel": "2",
-        "point": 100
-      },
-      {
-        "idLevel": "4",
-        "point": 100
-      },
-      {
-        "idLevel": "6",
-        "point": 100
-      },
-      {
-        "idLevel": "7",
-        "point": 100
-      },
-      {
-        "idLevel": "3",
-        "point": 100
-      },
-      {
-        "idLevel": "5",
-        "point": 100
-      }
-    ]
-  },
-  {
-    "name": "wdwdwdw",
-    "email": "dgwgwg@dwdwwd",
-    "password": "321",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2R3ZHdkdyIsImVtYWlsIjoiZGd3Z3dnQGR3ZHd3ZCIsInBhc3N3b3JkIjoiMzIxIiwiaWF0IjoxNzI1ODgxNjA1fQ.Cw2MesML8R6ZGzCZ_C2VsSiPeP3-5J1icKEU_srmrHU",
-    "id": 1,
-    "completedLevels": [
-      {
-        "idLevel": "2",
-        "point": 100
-      },
-      {
-        "idLevel": "1",
-        "point": 100
-      }
-    ]
-  },
-  {
-    "name": "aaaa",
-    "email": "wwdw@aaaa",
-    "password": "ssssss",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWFhYSIsImVtYWlsIjoid3dkd0BhYWFhIiwicGFzc3dvcmQiOiJzc3Nzc3MiLCJpYXQiOjE3MjYxNDQyNDd9.2hJAabPRddHMpAQ73QovUxkDoLFN27S4A09Pm84sRCo",
-    "id": 2,
-    "completedLevels": [
-      {
-        "idLevel": "1",
-        "point": 100
-      },
-      {
-        "idLevel": "2",
-        "point": 100
-      },
-      {
-        "idLevel": "3",
-        "point": 100
-      },
-      {
-        "idLevel": "6",
-        "point": 100
-      },
-      {
-        "idLevel": "4",
-        "point": 100
-      },
-      {
-        "idLevel": "5",
-        "point": 100
-      },
-      {
-        "idLevel": "7",
-        "point": 100
-      }
-    ]
-  },
-  {
-    "name": "dwdsasdaw",
-    "email": "wwwdwwadw@wdwads",
-    "password": "adwdwda",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZHdkc2FzZGF3IiwiZW1haWwiOiJ3d3dkd3dhZHdAd2R3YWRzIiwicGFzc3dvcmQiOiJhZHdkd2RhIiwiaWF0IjoxNzI2MTU5NzU1fQ.V8RDqwjLqOFUy7ABfanG-OvaQsG0WTHC5YL2abP9u9U",
-    "id": 3,
-    "completedLevels": [
-      {
-        "idLevel": "7",
-        "point": 100
-      },
-      {
-        "idLevel": "1",
-        "point": 100
-      },
-      {
-        "idLevel": "4",
-        "point": 100
-      },
-      {
-        "idLevel": "2",
-        "point": 100
-      },
-      {
-        "idLevel": "3",
-        "point": 100
-      },
-      {
-        "idLevel": "6",
-        "point": 100
-      },
-      {
-        "idLevel": "5",
-        "point": 100
-      }
-    ]
-  },
-  {
-    "name": "wdwdw",
-    "email": "ssdsdsss@wdwss",
-    "password": "ssss",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2R3ZHciLCJlbWFpbCI6InNzZHNkc3NzQHdkd3NzIiwicGFzc3dvcmQiOiJzc3NzIiwiaWF0IjoxNzI2MTYwMDA1fQ.FSSegTLFi1MK4v5MSCX60BMQ-2HlshwoqCN3Ihx1JBs",
-    "id": 4,
-    "completedLevels": [
-      {
-        "idLevel": "2",
-        "point": 100
-      },
-      {
-        "idLevel": "7",
-        "point": 100
-      },
-      {
-        "idLevel": "4",
-        "point": 100
-      },
-      {
-        "idLevel": "5",
-        "point": 100
-      }
-    ]
-  },
-  {
-    "name": "wdw",
-    "email": "dwdwdwdW@Ddwdw",
-    "password": "dwdasdawd",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2R3IiwiZW1haWwiOiJkd2R3ZHdkV0BEZHdkdyIsInBhc3N3b3JkIjoiZHdkYXNkYXdkIiwiaWF0IjoxNzI2MTYxNzgyfQ.ygcDaT_hZN7WKNZSVcP8oLfL7mj99otJli50pAu110E",
-    "id": 5,
-    "completedLevels": []
-  },
-  {
     "name": "admin",
     "email": "admin@admin",
     "password": "admin",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGFkbWluIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTcyNjE2MjA0M30.rhPoxKodQnpTdOVHgxaoPljYZt220vZvMkJD7ap_Uxs",
-    "admin" : true,
-    "id": 6,
+    "admin": true,
+    "id": 0,
+    "rank": "Продвинутый #f0f0f0",
     "completedLevels": [
       {
         "idLevel": "2",
-        "point": 100
+        "point": 112
+      },
+      {
+        "idLevel": "3",
+        "point": 112
+      },
+      {
+        "idLevel": "0",
+        "point": 111
+      },
+      {
+        "idLevel": "1",
+        "point": 422
+      },
+      {
+        "idLevel": "4",
+        "point": 222
       }
     ]
   },
   {
-    "name": "Wdwdas2EE",
-    "email": "www@dwdw",
-    "password": "wwwW",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiV2R3ZGFzMkVFIiwiZW1haWwiOiJ3d3dAZHdkdyIsInBhc3N3b3JkIjoid3d3VyIsImlhdCI6MTcyNjE2MjYwN30.r-VU7K4D-GO1e8rjkW5LtemdiDEmli_XHVp4XInDDmY",
-    "id": 7,
+    "name": "Fwfwfwf",
+    "email": "wwfwf@sddwdsd",
+    "password": "aaaa",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRndmd2Z3ZiIsImVtYWlsIjoid3dmd2ZAc2Rkd2RzZCIsInBhc3N3b3JkIjoiYWFhYSIsImlhdCI6MTcyNzA3Nzc1MH0.BSMGvWIpdWkd09azpKw4VSLLH_IwKb_XCPYj1kzKfg4",
+    "id": 1,
+    "rank": "Начальный уровень",
+    "completedLevels": []
+  },
+  {
+    "name": "wdwd",
+    "email": "wdwdw@dwdw",
+    "password": "1111",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoid2R3ZCIsImVtYWlsIjoid2R3ZHdAZHdkdyIsInBhc3N3b3JkIjoiMTExMSIsImlhdCI6MTcyNzA3Nzg0OX0.ZV1Ccz_4UdgXu1TaHpLq0ldSz3B9pMNeWE-WXFETOa4",
+    "id": 2,
+    "rank": "Начальный уровень",
+    "completedLevels": []
+  },
+  {
+    "name": "dwdw",
+    "email": "dwdwdw@wdadwa",
+    "password": "dddd",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZHdkdyIsImVtYWlsIjoiZHdkd2R3QHdkYWR3YSIsInBhc3N3b3JkIjoiZGRkZCIsImlhdCI6MTcyNzE5MTEyN30.ES6oC_NjmpJcG0YNVxZdHllW6-uB1SFGZ15XAjqam3A",
+    "id": 3,
+    "rank": "Продвинутый #f0f0f0",
     "completedLevels": [
       {
-        "idLevel": "6",
-        "point": 100
+        "idLevel": "1",
+        "point": 422
       },
       {
-        "idLevel": "1",
-        "point": 100
+        "idLevel": "2",
+        "point": 112
+      },
+      {
+        "idLevel": "4",
+        "point": 222
       }
     ]
   }

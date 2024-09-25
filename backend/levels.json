@@ -1,85 +1,112 @@
 [
-	{
-		"id": 1,
-    "type": "Переменные",
-    "title": "Разбор переменных",
-		"task": "let age = 20;\nage = 21;\nconsole.log(age)",
-		"options": [{ "option": "21", "check": true},{ "option": "Error", "check": false}, { "option": "20", "check": false}],
-		"complexity": "Легкий"
-	},
-	{
-		"id": 2,
-    "type": "Переменные",
-    "title": "Разбор переменных nO2",
-		"task": "let firstName = 'John';\nlet lastName = 'Doe';\nconsole.log(firstName + ' ' + lastName);",
-		"options": [
-			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": true },
-			{ "option": "John + ' ' + Doe", "check": false }
-		],
-		"complexity": "Легкий"
-	},
-	{
-		"id": 3,
-    "type": "Переменные",
-    "title": "Ошибка переменных",
-		"task": "",
-		"options": [
-			{ "option": "JohnDoe", "check": true },
-			{ "option": "John Doe", "check": false },
-			{ "option": "John + ' ' + Doe", "check": false }
-		],
-		"complexity": "Легкий"
-	},
-
-	{
-		"id": 4,
-    "type": "Переменные",
-    "title": "Ошибка переменных",
-		"task": "",
-		"options": [
-			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": true },
-			{ "option": "John + ' ' + Doe", "check": false }
-		],
-		"complexity": "Легкий"
-	},
-
-	{
-		"id": 5,
-    "type": "Переменные",
-    "title": "Ошибка переменных",
-		"task": "",
-		"options": [
-			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": true },
-			{ "option": "John + ' ' + Doe", "check": false }
-		],
-		"complexity": "Легкий"
-	},
-
-	{
-		"id": 6,
-    "type": "Переменные",
-    "title": "Ошибка переменных",
-		"task": "",
-		"options": [
-			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": true },
-			{ "option": "John + ' ' + Doe", "check": false }
-		],
-		"complexity": "Легкий"
-	},
-	{
-		"id": 7,
-    "type": "Переменные",
-    "title": "Ошибка переменных",
-		"task": "",
-		"options": [
-			{ "option": "JohnDoe", "check": false },
-			{ "option": "John Doe", "check": true },
-			{ "option": "John + ' ' + Doe", "check": false }
-		],
-		"complexity": "Легкий"
-	}
+  {
+    "type": "WDWDWDW",
+    "title": "WDwdWD",
+    "task": "wdwdsawdsad",
+    "points": 111,
+    "options": [
+      {
+        "option": "wdwdwdwd",
+        "check": false
+      },
+      {
+        "option": "wdwdwdwdw",
+        "check": false
+      },
+      {
+        "option": "dwdwdw",
+        "check": true
+      }
+    ],
+    "complexity": "WDW",
+    "id": 0
+  },
+  {
+    "type": "WDsdawwWDWDW",
+    "title": "WDwwdadWD",
+    "task": "wdwdsawdsadawdawwda",
+    "points": 422,
+    "options": [
+      {
+        "option": "wdwdwdwd",
+        "check": false
+      },
+      {
+        "option": "wdwdwdwdw",
+        "check": false
+      },
+      {
+        "option": "dwdwdw",
+        "check": true
+      }
+    ],
+    "complexity": "WsdwadwaDW",
+    "id": 1
+  },
+  {
+    "type": "d wd wdwa dzdw",
+    "title": "dw dw dwdw",
+    "task": "22wfwfwasdawwg sf awd sdw adww dwa ",
+    "points": 112,
+    "options": [
+      {
+        "option": "wdwdwdwd",
+        "check": false
+      },
+      {
+        "option": "wdwdwdwdw",
+        "check": false
+      },
+      {
+        "option": "dwdwdw",
+        "check": true
+      }
+    ],
+    "complexity": " wd wdwd",
+    "id": 2
+  },
+  {
+    "type": "d wd wdwa dzdw",
+    "title": "dw dw dwdw",
+    "task": "22wfwfwasdawwg sf awd sdw adww dwa ",
+    "points": 112,
+    "options": [
+      {
+        "option": "wdwdwdwd",
+        "check": false
+      },
+      {
+        "option": "wdwdwdwdw",
+        "check": false
+      },
+      {
+        "option": "dwdwdw",
+        "check": true
+      }
+    ],
+    "complexity": " wd wdwd",
+    "id": 3
+  },
+  {
+    "type": "цвцвфцвц",
+    "title": "фцвфцв",
+    "task": "фвцфвц",
+    "points": 222,
+    "options": [
+      {
+        "option": "цвцвц",
+        "check": false
+      },
+      {
+        "option": "вцвцв",
+        "check": true
+      },
+      {
+        "option": "цвцвцвц",
+        "check": false
+      }
+    ],
+    "complexity": "цвц",
+    "id": 4
+  }
 ]

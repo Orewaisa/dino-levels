@@ -1,4 +1,3 @@
-import { stringify } from 'querystring'
 
 const express = require('express')
 const cors = require('cors')
@@ -13,6 +12,19 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(express.json())
 
+function calculateRankExperience(points) {
+	if (points <= 200) {
+		return 'Начальный уровень green'
+	} else if (points <= 600) {
+		return 'Знающий blue'
+	} else if (points <= 1000) {
+		return 'Продвинутый #f0f0f0'
+	} else if (points <= 1500) {
+		return 'Камикадзе red'
+	} else if (points <= 1800) {
+		return 'Повелитель red'
+	}
+}
 
 app.post('/base/registration', (req, res) => {
   let userData = req.body;
@@ -22,6 +34,7 @@ app.post('/base/registration', (req, res) => {
   fs.readFile('accounts.json', (err, data) => {
     let arrayAccounts = JSON.parse(data || '[]')
     userData.id = arrayAccounts.length;
+    userData.rank = "Начальный уровень"
     userData.completedLevels = [];
     arrayAccounts.push(userData);
     
@@ -104,13 +117,14 @@ app.post('/base/points', (req, res) => {
     if (levelCompleted) {
 			return res.send({ error: 'Аккаунт уже выполнил это задание!' })
 		}
-    
+    console.log(bodyData);
     currentAccount.completedLevels.push({idLevel: bodyData.id, point: bodyData.points});
     
     currentAccount.completedLevels.forEach(e => {
       countPoint += e.point; 
     });
-
+    currentAccount.rank = calculateRankExperience(countPoint);
+    
 		fs.writeFile('accounts.json', JSON.stringify(parseData, null, 2), writeErr => {
         res.send({pointsCount: countPoint});
 			}

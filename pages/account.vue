@@ -4,11 +4,11 @@
       <div class="info">
         <div class="name">
           <h2>{{ dataUser.name }}</h2>
-          <p class="rank">Ранг: <span :style="{'color': calculateRankExperience() == 'Камикадзе' || calculateRankExperience() == 'Повелитель' || calculateRankExperience() == 'Продвинутый' ? 'red' : '#04ff00'}">{{ calculateRankExperience() }}</span></p>
+          <p class="rank">Ранг: <span :style="{'color': rank[1]}">{{ rank[0] }}</span>.</p>
         </div>
-        <p class="email">Почта: <span>{{ dataUser.email }}</span></p>
-        <p class="info-text">Количество пройденных уровней: <span>{{ countLevel }}</span></p>
-        <p class="info-text">Количество опыта: <span>{{ countPoint }}</span></p>
+        <p class="email">Почта: <span>{{ dataUser.email }}</span>.</p>
+        <p class="info-text">Количество пройденных уровней: <span>{{ countLevel }}</span>.</p>
+        <p class="info-text">Количество опыта: <span>{{ countPoint }}</span>.</p>
       </div>
     </section>
     <section class="levels font">
@@ -38,23 +38,36 @@
       & .name {
         font-size: 30px;
       }
+
       & .rank {
         font-size: 20px;
 
+        & > span {
+          font-weight: 600;
+        }
       }
     
       & .email {
         margin-top: 10px;
         margin-bottom: 5px;
+
+        & > span {
+          color: #ddff00;
+        }
       }
 
       & .info-text {
         margin-bottom: 5px;
+
+        & > span {
+          color: #ddff00;
+        }
       }
       
     }
   }
   .leave-account {
+    margin: 30px;
     font-weight: 600;
     text-align: center;
     font-size: 20px;
@@ -70,10 +83,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-  
+      
       & .level-info {
         margin-top: 5px;
         padding: 10px;
+        min-width: 300px;
         height: 100px;
         background: #039a00;
         border-radius: 10px;
@@ -105,6 +119,9 @@
   let countLevel = computed(() => {
     return currentLevels.value.length;
   })
+  let rank = computed(() => {
+    return dataUser.value.rank.split(" ");
+  })
   let countPoint = computed(() => {
     let count = 0;
     dataUser.value.completedLevels.forEach((e) => {
@@ -115,26 +132,16 @@
   let dataUser = ref(null);
 
 
-  function calculateRankExperience() {
-    if(countPoint.value <= 200) {
-      return "Начальный уровень";
-    } else if(countPoint.value <= 400) {
-      return "Знающий";
-    } else if(countPoint.value <= 600) {
-      return "Продвинутый";
-    } else if(countPoint.value <= 800) {
-      return "Камикадзе";
-    } else if(countPoint.value <= 1000) {
-      return "Повелитель";
-    }
-  }
-
   function leaveAccount() {
     localStorage.removeItem("token");
 
     setTimeout(() => {
-      location.reload();
-    },1000)
+      navigateTo('/login');
+
+      setTimeout(() => {
+        location.reload();
+      }, 500)
+    },500);
   }
 
   onMounted(async () => {

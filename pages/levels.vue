@@ -1,6 +1,6 @@
 <template>
 	<section  class="levels-list font" v-if="store.checkAccount">
-		<div class="level" v-for="level in arrayLevels" :key="level.id" @click="navigationPageLevels(level, level.id)" :style="{'background': checkComplexityLevel(level.id) ? 'green' : null}">
+		<div class="level" v-if="arrayLevels" v-for="level in arrayLevels" :key="level.id" @click="navigationPageLevels(level, level.id)" :style="{'background': checkСompletedLevel(level.id) ? 'green' : checkComplexityLevel(level.complexity)}">
 			<p class="id-level">Уровень: {{ level.id }}</p>
 			<div class="type">
 				<p class="type-text">Тип: {{ level.type }}</p>
@@ -31,6 +31,7 @@
 	& .level {
 		margin: 0px auto;
 		padding: 20px;
+		min-width: 300px;
 		cursor: pointer;
 		background: #0a0768;
 		border-radius: 10px;
@@ -99,8 +100,23 @@ let correctUser = ref('');
 function navigationPageLevels(level, id) {
 	navigateTo({ path: `/level/${id}`, query: level })
 }
-function checkComplexityLevel(id) {
-		return correctUser.value.completedLevels.some(e => e.idLevel == id);
+function checkСompletedLevel(id) {
+	return correctUser.value.completedLevels.some(e => e.idLevel == id);
+}
+function checkComplexityLevel(attribute) {
+	switch (attribute) {
+		case "Легкий": return "null"
+			break;
+
+		case "Нормальный": return "#011c95"
+			break;
+		
+		case "Сложный": return "#651515"
+			break;
+	
+		case "Профессиональный": return "#dc0000"
+			break;
+	}
 }
 
 onMounted(async () => {
@@ -112,7 +128,7 @@ onMounted(async () => {
 	
 		arrayLevels.value = responseLevels;
 	
-		console.log(correctUser.value)
+		console.log(arrayLevels.value)
 	}
 })
 </script>

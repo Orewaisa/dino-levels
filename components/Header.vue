@@ -75,7 +75,7 @@
       store.reloadedCheckAccount(true);
 		  
       const response = await user.getCurrentUser({ params: { token } });
-      console.log(response.user.admin);
+      console.log(response);
       
       if(response.user.admin) {
         store.reloadedVariableAdminToken(true);

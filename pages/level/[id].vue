@@ -22,12 +22,35 @@
         <p>{{ option.option }}</p>
       </div>
     </div>
+
+    <NuxtLink to="/levels" class="back"><button>Обратно</button></NuxtLink>
   </section>
 </template>
 
 <style lang="less" scoped>
   .level {
     margin: 0px 40px;
+
+    & .back {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+
+      & > button {
+        padding: 10px;
+        background: #00098b;
+        border-radius: 15px;
+        color: #00d9ff;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 85%;
+        }
+      }
+    }
 
     & .params {
       display: flex;
@@ -114,9 +137,9 @@
   async function checksOption(check) {
     errorText.value = '';
     if(check) {
-      const response = await levels.postCurrentLevel({id: levelId, token: token.value, points: 100}, {}).then(res => res.data);
+      const response = await levels.postCurrentLevel({id: levelId, token: token.value, points: levelInfo.value.points}, {}).then(res => res.data);
       checkCurrent.value = check;
-      console.log(response);
+      console.log(levelInfo.points);
       if(response.error) {
         errorText.value = response.error;
       } else {
@@ -134,7 +157,8 @@
   onMounted(async () => {
     const response = await levels.getLevel(levelId, {});
     token.value = localStorage.getItem("token");
-    
     levelInfo.value = response;
+    console.log(levelInfo.value);
+    
   })
 </script>
